@@ -1,0 +1,45 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+
+# Virtual environments
+ml_venv/
+env/
+venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# VS Code settings
+.vscode/
+
+# Data files
+*.csv
+*.tsv
+*.json
+*.log
+*.h5
+*.hdf5
+
+# Model files
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.onnx
+
+# Environment files
+.env
+*.env
+
+# Pip logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# OS-specific files
+.DS_Store
+Thumbs.db
