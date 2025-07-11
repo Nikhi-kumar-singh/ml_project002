@@ -44,6 +44,17 @@ class DataIngestion():
 
             logging.info("ingestion of the data is completed.")
 
+            return (
+                self.ingestion_config.train_data_path,
+                self.ingestion_config.test_data_path
+            )
+
 
         except Exception as e:
             raise CustomException(e,sys)
+        
+
+if __name__=="__main__":
+    obj=DataIngestion()
+    obj.initiate_data_ingestion()
+
