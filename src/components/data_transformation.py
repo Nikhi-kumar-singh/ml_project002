@@ -83,8 +83,8 @@ class DataTransformation:
 
             return (
                 x_train,
-                x_test,
                 y_train,
+                x_test,
                 y_test,
                 self.data_transformation_config.preprocessor_obj_file_path
             )
@@ -97,11 +97,11 @@ class DataTransformation:
 
 
 
-if __name__ == "__main__":
-    obj=DataTransformation()
-    train_file_path="artifacts/train.csv"
-    test_file_path="artifacts/test.csv"
-    x_train,x_test,y_train,y_test,preprocessor_obj_file_path=obj.initiate_data_transformation(train_file_path,test_file_path)
+# if __name__ == "__main__":
+#     obj=DataTransformation()
+#     train_file_path="artifacts/train.csv"
+#     test_file_path="artifacts/test.csv"
+#     x_train,x_test,y_train,y_test,preprocessor_obj_file_path=obj.initiate_data_transformation(train_file_path,test_file_path)
 
-    print(f"{x_train.shape},{x_test.shape}")
+#     print(f"{x_train.shape},{x_test.shape}")
 
