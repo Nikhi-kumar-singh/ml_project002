@@ -56,9 +56,19 @@ class DataTransformation:
         try: 
             train_df=pd.read_csv(train_file_path)
             test_df=pd.read_csv(test_file_path)
-            target_column="math score"
+            target_column="math_score"
+
+            
+            # print(f"columns: {train_df.columns}")
+
+            train_df.columns=train_df.columns.str.replace(" ","_").str.replace("/","_")
+            test_df.columns=test_df.columns.str.replace(" ","_").str.replace("/","_")
+            
+            # print(f"columns: {train_df.columns}")
+
             num_features=list(train_df.select_dtypes(exclude="O").columns)
             cat_features=list(train_df.select_dtypes(include="O").columns)
+
 
             if target_column in num_features:
                 num_features.remove(target_column)
@@ -97,11 +107,12 @@ class DataTransformation:
 
 
 
-# if __name__ == "__main__":
-#     obj=DataTransformation()
-#     train_file_path="artifacts/train.csv"
-#     test_file_path="artifacts/test.csv"
-#     x_train,x_test,y_train,y_test,preprocessor_obj_file_path=obj.initiate_data_transformation(train_file_path,test_file_path)
+if __name__ == "__main__":
+    train_file_path="artifacts/train.csv"
+    test_file_path="artifacts/test.csv"
 
-#     print(f"{x_train.shape},{x_test.shape}")
+    obj=DataTransformation()
+    x_train,x_test,y_train,y_test,preprocessor_obj_file_path=obj.initiate_data_transformation(train_file_path,test_file_path)
+
+    print(f"{x_train.shape},{x_test.shape}")
 
